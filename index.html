@@ -1,0 +1,42 @@
+<html>
+<head>
+
+</head>
+  <body ng-app="MyApp">
+    <div ng-controller="MyController as my">
+      <div>
+        <input type="text" ng-model="my.myName"/>
+        <input type="button" value="Okay" ng-click="my.call()"/>
+      </div>
+      <div>
+        {{my.myName}}
+      </div>
+    </div>
+
+    <div ng-controller="MyOtherController">
+      <div>
+        <input type="text" ng-model="myName"/>
+      </div>
+      <div >
+        <input type="button" value="Change" ng-click="changeMyName()">
+      </div>
+      <div>
+        {{myName|uppercase}}
+      </div>
+    </div>
+
+    <div ng-controller="OuterController">
+      <br/> Outer Name - {{name}}
+      <div ng-controller="InnerController">
+        <br/> Inner Name - {{name}}
+        <br/> Inner Mobile - {{mobile}}
+      </div>
+
+        <br/> Inner Mobile - {{mobile}}
+    </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+   <script src="app.js" charset="utf-8"></script>
+   <script src="logfactory.js" charset="utf-8"></script>
+   <script src="provideregister.js" charset="utf-8"></script>
+  </body>
+</html>
