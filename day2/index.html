@@ -1,0 +1,51 @@
+<html>
+<head>
+
+</head>
+  <body ng-app="MyApp">
+
+      <div ng-controller="MyController">
+            {{cnt}}
+          <div ng-controller="MyOtherController">
+              <input type="button" value="emit" ng-click="$emit('MyEvent')">
+              <input type="button" value="broadcast" ng-click="$broadcast('MyEvent')">
+              {{cnt}}
+
+              <input type="button" value="Okay" ng-hide="status"/>
+          </div>
+      </div>
+
+      <div ng-controller="SimpleController">
+        {{simple}}
+      </div>
+
+      <div ng-controller="AgainSimpleController">
+        {{againSimple}}
+        {{1+2 | currency}}
+        {{cities[getIndex()]}}
+        {{myData}}
+        {{getIndex() >= 2 ? 'Greater' : 'Lesser'}}
+
+        <input type="button" name="name" value="Okay" ng-click="myEvent($event)">
+        {{ev | json}}
+
+        <input type="button" name="name" value="City" ng-click="changeCity()">
+        {{cities[index]}}
+        {{::cities[index]}}
+      </div>
+
+      <div ng-controller="InterController">
+        <img ng-src="{{image}}" width="100" height="100"/>
+
+        <div >
+          <input type="checkbox" value="visible" ng-model="isVisible">
+        </div>
+        <div>
+          <input type="button" name="name" value="okay" ng-disabled="isVisible"/>
+        </div>
+      </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+  <script src="app.js" charset="utf-8"></script>
+  </body>
+</html>
