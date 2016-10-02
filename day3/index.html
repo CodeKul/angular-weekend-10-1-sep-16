@@ -1,0 +1,22 @@
+<html>
+<head>
+</head>
+
+<body ng-app="MyApp">
+  <div ng-controller="MyController as my">
+    <br/> <input type="text" ng-model="myData"/>
+    <br/> {{myData | currency:"&#8377;"}}
+    <br/> {{myData | number:"3"}}
+
+    <br/> <input type="text" ng-model="my.query"/>
+    <ul>
+      <li ng-repeat="data in my.rawData | filter:my.query">{{data.os}}</li>
+    </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+  <script src="app.js" charset="utf-8"></script>
+  <script src="filter.js" charset="utf-8"></script>
+  <script src="myfactory.js" charset="utf-8"></script>
+</body>
+</html>
